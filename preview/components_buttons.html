@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bebas+Neue&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; padding: 24px; font-family: 'Barlow Condensed', Arial, sans-serif; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #7D7D7D; margin-bottom: 10px; }
+  /* Primary CTA */
+  .btn { display: inline-flex; align-items: center; gap: 10px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: opacity 150ms; }
+  .btn-primary { background: #FE440D; color: white; padding: 14px 28px; border-radius: 100px; font-size: 14px; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-ghost-dark { background: transparent; color: #FE440D; border: 2px solid #FE440D; padding: 12px 26px; border-radius: 100px; font-size: 14px; }
+  .btn-ghost-light { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); padding: 12px 26px; border-radius: 100px; font-size: 14px; }
+  .btn-dark { background: #1C1F23; color: white; padding: 14px 28px; border-radius: 100px; font-size: 14px; }
+  .btn-square { background: #FE440D; color: white; padding: 14px 24px; border-radius: 6px; font-size: 14px; }
+  .state-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #CCC; margin-bottom: 4px; }
+  .dark-row { background: #1C1F23; padding: 16px; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <div class="label">Buttons — Variantes</div>
+  <div class="row">
+    <div><div class="state-label">Primary</div><button class="btn btn-primary">CONTACTO →</button></div>
+    <div><div class="state-label">Dark</div><button class="btn btn-dark">VER MÁS →</button></div>
+    <div><div class="state-label">Ghost / Orange</div><button class="btn btn-ghost-dark">EXPLORAR →</button></div>
+    <div><div class="state-label">Square</div><button class="btn btn-square">PROTOTIPAR →</button></div>
+  </div>
+  <div class="dark-row">
+    <div class="row" style="margin-bottom:0;">
+      <div><div class="state-label" style="color:#555;">Ghost / Light (on dark)</div><button class="btn btn-ghost-light">RESIDENCIAS →</button></div>
+      <div><div class="state-label" style="color:#555;">Primary (on dark)</div><button class="btn btn-primary">APLICAR →</button></div>
+    </div>
+  </div>
+</body>
+</html>

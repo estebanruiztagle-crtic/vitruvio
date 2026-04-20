@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CRTIC — Brand Style Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #F5F5F5; color: #1C1F23; }
+  
+  .cover { background: #FE440D; color: white; padding: 60px; min-height: 200px; }
+  .cover h1 { font-size: 64px; font-weight: 900; letter-spacing: -2px; line-height: 1; }
+  .cover p { font-size: 18px; margin-top: 16px; opacity: 0.85; }
+  
+  section { padding: 48px 60px; border-bottom: 1px solid #DDD; background: white; margin-bottom: 8px; }
+  h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 4px; color: #7D7D7D; margin-bottom: 24px; }
+  h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  
+  /* PALETA */
+  .palette { display: flex; gap: 16px; flex-wrap: wrap; }
+  .swatch { width: 140px; }
+  .swatch-color { width: 140px; height: 100px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch-name { font-size: 13px; font-weight: 700; margin-top: 8px; }
+  .swatch-hex { font-size: 12px; color: #7D7D7D; font-family: monospace; }
+  .swatch-use { font-size: 11px; color: #999; margin-top: 2px; }
+  
+  /* TIPOGRAFÍA */
+  .type-sample { margin-bottom: 32px; padding: 24px; background: #F9F9F9; border-radius: 8px; }
+  .font-bebas { font-family: 'Arial Black', sans-serif; letter-spacing: 2px; font-size: 48px; font-weight: 900; text-transform: uppercase; }
+  .font-halvar { font-family: 'Arial', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .font-playfair { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 40px; }
+  .font-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 8px; }
+  .font-meta { font-size: 12px; color: #7D7D7D; margin-top: 8px; font-family: monospace; }
+  
+  /* ELEMENTOS DE DISEÑO */
+  .design-elements { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .design-element { background: #F0F0F0; padding: 16px; border-radius: 8px; }
+  .design-element h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .design-element p { font-size: 12px; color: #666; }
+  
+  /* MOTIVO VISUAL */
+  .motif { display: flex; gap: 8px; align-items: center; font-size: 32px; }
+  
+  /* LAYOUT RULES */
+  .rules { list-style: none; }
+  .rules li { padding: 12px 0; border-bottom: 1px solid #EEE; font-size: 14px; display: flex; gap: 12px; align-items: start; }
+  .rules li::before { content: "→"; color: #FE440D; font-weight: 700; flex-shrink: 0; }
+  
+  /* USAGE COMBOS */
+  .combos { display: flex; gap: 16px; flex-wrap: wrap; }
+  .combo { padding: 20px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; min-width: 180px; }
+  
+  footer { background: #1C1F23; color: #666; padding: 32px 60px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>CRTIC<br>BRAND GUIDE</h1>
+  <p>Sistema de identidad visual extraído del documento de colaboración I+D</p>
+</div>
+
+<!-- PALETA DE COLORES -->
+<section>
+  <h2>01 — Paleta de Colores</h2>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FE440D;"></div>
+      <div class="swatch-name">CRTIC Orange</div>
+      <div class="swatch-hex">#FE440D</div>
+      <div class="swatch-hex">RGB 254, 68, 13</div>
+      <div class="swatch-use">Color primario / fondos hero / CTA</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FF4512;"></div>
+      <div class="swatch-name">Orange Alt</div>
+      <div class="swatch-hex">#FF4512</div>
+      <div class="swatch-hex">RGB 255, 69, 18</div>
+      <div class="swatch-use">Variante naranja (backgrounds amplios)</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1C1F23;"></div>
+      <div class="swatch-name">Ink Black</div>
+      <div class="swatch-hex">#1C1F23</div>
+      <div class="swatch-hex">RGB 28, 31, 35</div>
+      <div class="swatch-use">Fondo oscuro / texto sobre claro</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#000000; border: 1px solid #ccc;"></div>
+      <div class="swatch-name">Pure Black</div>
+      <div class="swatch-hex">#000000</div>
+      <div class="swatch-use">Texto principal / elementos gráficos</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border: 1px solid #DDD;"></div>
+      <div class="swatch-name">Pure White</div>
+      <div class="swatch-hex">#FFFFFF</div>
+      <div class="swatch-use">Texto sobre oscuro/naranja / fondos</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D8D6D8;"></div>
+      <div class="swatch-name">Light Gray</div>
+      <div class="swatch-hex">#D8D6D8</div>
+      <div class="swatch-hex">RGB 216, 214, 216</div>
+      <div class="swatch-use">Texto secundario / elementos sutiles</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7D7D7D;"></div>
+      <div class="swatch-name">Mid Gray</div>
+      <div class="swatch-hex">#7D7D7D</div>
+      <div class="swatch-use">Fondos medios / elementos neutros</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFDE58;"></div>
+      <div class="swatch-name">Accent Yellow</div>
+      <div class="swatch-hex">#FFDE58</div>
+      <div class="swatch-hex">RGB 255, 222, 88</div>
+      <div class="swatch-use">Acento / highlight secundario</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFÍA -->
+<section>
+  <h2>02 — Sistema Tipográfico</h2>
+  
+  <div class="type-sample">
+    <div class="font-label">Bebas Neue Bold / Regular — Display / Titulares grandes</div>
+    <div class="font-bebas" style="color:#1C1F23;">TRANS FORMANDO CREATIVIDAD</div>
+    <div class="font-meta">
+      Uso: Headlines de impacto máximo, secciones hero, texto decorativo gigante<br>
+      Tamaños en doc: 200px → 16px | Tracking: amplio a normal<br>
+      Alternativa web gratuita: <strong>Bebas Neue</strong> (Google Fonts)
+    </div>
+  </div>
+  
+  <div class="type-sample">
+    <div class="font-label">Halvar Breit Bold / Regular — Texto UI / Cuerpo / Subtítulos</div>
+    <div class="font-halvar" style="color:#1C1F23;">SOMOS DOS INSTITUCIONES</div>
+    <div class="font-meta">
+      Uso: Subtítulos, body copy, labels, navegación, cuerpo de texto<br>
+      Variantes: Bold, Regular, BoldSlanted, RegularSlanted<br>
+      Tamaños en doc: 107px → 10px<br>
+      Alternativa web: <strong>Barlow Condensed</strong> o <strong>Archivo</strong> (Google Fonts)
+    </div>
+  </div>
+  
+  <div class="type-sample">
+    <div class="font-label">Playfair Display Italic — Contraste editorial / Énfasis</div>
+    <div class="font-playfair" style="color:#1C1F23;">Interpretación en Vivo</div>
+    <div class="font-meta">
+      Uso: Palabras clave en contraste serif, citas, énfasis editorial<br>
+      Combinación clave: mezclar con Bebas Neue (sans display) para tensión visual<br>
+      Tamaños en doc: 109px → 28px<br>
+      Disponible en: <strong>Google Fonts</strong> (Playfair Display)
+    </div>
+  </div>
+</section>
+
+<!-- MOTIVOS GRÁFICOS -->
+<section>
+  <h2>03 — Motivos y Elementos Gráficos</h2>
+  <div class="design-elements">
+    <div class="design-element">
+      <h4>Doble Flecha ▶▶ (DD)</h4>
+      <p>Motivo recurrente que representa avance, tecnología, progresión. Aparece en negro, naranja y blanco según el fondo.</p>
+    </div>
+    <div class="design-element">
+      <h4>Puntos en Triángulo ⬟</h4>
+      <p>Patrón de 3 círculos dispuestos en triángulo isósceles. Motivo identitario CRTIC. Aparece en múltiples secciones.</p>
+    </div>
+    <div class="design-element">
+      <h4>Separadores de Diamante ◆◇◆</h4>
+      <p>Líneas decorativas de separación entre secciones usando rombos/diamantes repetidos.</p>
+    </div>
+    <div class="design-element">
+      <h4>Tipografía Doble (LLOO QQUUEE)</h4>
+      <p>Efecto de duplicación de letras para crear textura visual en titulares. Recurso de diseño para fondos oscuros.</p>
+    </div>
+    <div class="design-element">
+      <h4>Grid de Módulos</h4>
+      <p>Composición en columnas con bloques de información bien delimitados. Layout tipo "newspaper grid".</p>
+    </div>
+    <div class="design-element">
+      <h4>Texto-Fondo Gigante</h4>
+      <p>Tipografía a escala extrema como elemento gráfico de fondo (e.g. "RESIDENCIA INMER" cortado). Técnica editorial.</p>
+    </div>
+    <div class="design-element">
+      <h4>Comillas Grandes</h4>
+      <p>Citas textuales con apertura y cierre gráfico exagerado. Usadas para claims y frases de posicionamiento.</p>
+    </div>
+    <div class="design-element">
+      <h4>Mezcla Sans + Serif</h4>
+      <p>Contraste tipográfico intencional: Bebas/Halvar (sans) + Playfair (serif itálica) en la misma línea o bloque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMBINACIONES DE COLOR -->
+<section>
+  <h2>04 — Combinaciones Validadas</h2>
+  <div class="combos">
+    <div class="combo" style="background:#FE440D; color:white;">Blanco sobre Naranja<br><small style="font-weight:400;opacity:0.8;">Hero sections, CTAs, covers</small></div>
+    <div class="combo" style="background:#1C1F23; color:white;">Blanco sobre Negro<br><small style="font-weight:400;opacity:0.8;">Secciones de contenido denso</small></div>
+    <div class="combo" style="background:#000000; color:#FE440D;">Naranja sobre Negro<br><small style="font-weight:400;opacity:0.6;">Acentos, keywords, números</small></div>
+    <div class="combo" style="background:#FFFFFF; color:#000000; border:1px solid #DDD;">Negro sobre Blanco<br><small style="font-weight:400;color:#666;">Cuerpo de texto, tablas</small></div>
+    <div class="combo" style="background:#000000; color:#D8D6D8;">Gris claro sobre Negro<br><small style="font-weight:400;opacity:0.7;">Texto secundario / subtítulos</small></div>
+  </div>
+</section>
+
+<!-- PRINCIPIOS DE LAYOUT -->
+<section>
+  <h2>05 — Principios de Layout y Estilo</h2>
+  <ul class="rules">
+    <li>Alternar bloques de fondo: naranja → negro → blanco → negro → naranja. Crea ritmo visual agresivo y dinámico.</li>
+    <li>Texto display a escala extrema como elemento gráfico (no solo como titular). El texto ES la imagen.</li>
+    <li>Mezclar en la misma línea: fuente sans-display + fuente serif itálica para tensión tipográfica.</li>
+    <li>Uso de mayúsculas totales en titulares principales. Las minúsculas se reservan solo para serif itálica de contraste.</li>
+    <li>Padding generoso en bloques de contenido. El espacio en blanco es parte activa del diseño.</li>
+    <li>Iconografía geométrica: círculos, flechas dobles, rombos. No fotografías decorativas.</li>
+    <li>Fotografías con alto contraste y tratamiento oscuro (viñeta, desaturación parcial). Nunca fotografía "limpia".</li>
+    <li>Numeración de fases/pasos en tipografía display naranja. Los números son elementos gráficos, no solo datos.</li>
+    <li>Texto recortado fuera del borde (overflow) para crear tensión dinámica en secciones full-width.</li>
+  </ul>
+</section>
+
+<!-- VOZ TEXTUAL -->
+<section>
+  <h2>06 — Voz y Tono Textual</h2>
+  <ul class="rules">
+    <li>Frases cortas e impactantes en titulares. Máximo 5-7 palabras por línea en display.</li>
+    <li>Uso de corchetes para aclaraciones o anticlímax: [NO SOMOS UNA EMPRESA BUSCANDO SU PRÓXIMO ÉXITO DE VENTAS]</li>
+    <li>Mezcla de español e inglés técnico: "MVP", "Plug & Play", "User Testing". El inglés técnico es intencional.</li>
+    <li>Tono directo e institucional pero con actitud. No corporativo tradicional.</li>
+    <li>Citas entre comillas grandes como recursos de posicionamiento ideológico.</li>
+  </ul>
+</section>
+
+<footer>
+  CRTIC — Guía de estilo extraída del documento de colaboración I+D 2026 | Generado por análisis automatizado del PDF
+</footer>
+</body>
+</html>

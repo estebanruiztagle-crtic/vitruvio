@@ -1,0 +1,312 @@
+/* ============================================================
+   CRTIC Design System — Colors & Typography
+   Centro para la Revolución Tecnológica en Industrias Creativas
+   ============================================================ */
+
+/* ── BARLOW CONDENSED — local font files ────────────────── */
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-ExtraLight.ttf') format('truetype'); font-weight: 200; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-ExtraLightItalic.ttf') format('truetype'); font-weight: 200; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; }
+@font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; }
+
+/* ── BEBAS NEUE — local font file ───────────────────────── */
+@font-face { font-family: 'Bebas Neue'; src: url('fonts/BebasNeue-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+
+/* ── Playfair Display — Google Fonts ────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+/* ── FONT NOTE ──────────────────────────────────────────────
+   Primary sans display: Bebas Neue (Google Fonts) ✓
+   UI/Body: Halvar Breit (proprietary) → substituted with
+            Barlow Condensed (local TTF files) ✓
+   Editorial: Playfair Display (Google Fonts) ✓
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── BASE COLOR PALETTE ─────────────────────────────────── */
+  --crtic-orange:        #FE440D;
+  --crtic-orange-alt:    #FF4512;
+  --crtic-ink:           #1C1F23;
+  --crtic-black:         #000000;
+  --crtic-white:         #FFFFFF;
+  --crtic-gray-light:    #D8D6D8;
+  --crtic-gray-mid:      #7D7D7D;
+  --crtic-yellow:        #FFDE58;
+
+  /* ── SEMANTIC COLOR TOKENS ──────────────────────────────── */
+
+  /* Backgrounds */
+  --bg-primary:          var(--crtic-orange);
+  --bg-dark:             var(--crtic-ink);
+  --bg-black:            var(--crtic-black);
+  --bg-light:            var(--crtic-white);
+  --bg-subtle:           #F5F5F5;
+
+  /* Foreground / Text */
+  --fg-primary:          var(--crtic-black);
+  --fg-on-dark:          var(--crtic-white);
+  --fg-on-orange:        var(--crtic-white);
+  --fg-secondary:        var(--crtic-gray-mid);
+  --fg-tertiary:         var(--crtic-gray-light);
+  --fg-accent:           var(--crtic-orange);
+  --fg-accent-alt:       var(--crtic-yellow);
+
+  /* Interactive */
+  --color-cta-bg:        var(--crtic-orange);
+  --color-cta-text:      var(--crtic-white);
+  --color-link:          var(--crtic-orange);
+  --color-focus:         var(--crtic-orange);
+
+  /* Borders & Dividers */
+  --border-subtle:       #E8E8E8;
+  --border-mid:          #DDDDDD;
+  --border-dark:         rgba(255, 255, 255, 0.06);
+  --border-accent:       var(--crtic-orange);
+
+  /* ── TYPOGRAPHY SCALE ───────────────────────────────────── */
+
+  /* Font families */
+  --font-display:        'Bebas Neue', 'Arial Black', Arial, sans-serif;
+  --font-ui:             'Barlow Condensed', 'Arial', Helvetica, sans-serif;
+  --font-editorial:      'Playfair Display', Georgia, serif;
+
+  /* Display sizes (Bebas Neue — hero & graphic text) */
+  --text-display-2xl:    clamp(80px,  12vw, 200px);
+  --text-display-xl:     clamp(56px,  8vw,  120px);
+  --text-display-lg:     clamp(40px,  5vw,  72px);
+  --text-display-md:     clamp(28px,  3.5vw, 48px);
+  --text-display-sm:     clamp(20px,  2.5vw, 32px);
+
+  /* UI / Body sizes (Barlow Condensed) */
+  --text-ui-xl:          28px;
+  --text-ui-lg:          20px;
+  --text-ui-md:          16px;
+  --text-ui-sm:          14px;
+  --text-ui-xs:          12px;
+  --text-ui-label:       11px;
+
+  /* Editorial sizes (Playfair Italic) */
+  --text-editorial-xl:   clamp(32px, 4vw, 72px);
+  --text-editorial-lg:   clamp(24px, 3vw, 48px);
+  --text-editorial-md:   clamp(18px, 2vw, 32px);
+
+  /* Font weights */
+  --weight-black:        900;
+  --weight-bold:         700;
+  --weight-semibold:     600;
+  --weight-regular:      400;
+
+  /* Line heights */
+  --leading-tight:       0.9;
+  --leading-snug:        1.1;
+  --leading-normal:      1.4;
+  --leading-relaxed:     1.7;
+  --leading-loose:       1.9;
+
+  /* Letter spacing */
+  --tracking-tight:      -2px;
+  --tracking-snug:       -0.5px;
+  --tracking-normal:     0;
+  --tracking-wide:       1px;
+  --tracking-wider:      3px;
+  --tracking-widest:     5px;
+
+  /* ── SPACING SCALE ──────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10:  128px;
+
+  /* Section padding */
+  --section-pad-desktop: 64px;
+  --section-pad-mobile:  40px;
+
+  /* ── BORDER RADIUS ──────────────────────────────────────── */
+  --radius-none:   0px;
+  --radius-sm:     4px;
+  --radius-md:     6px;
+  --radius-lg:     8px;
+  --radius-pill:   100px;
+
+  /* ── SHADOWS ────────────────────────────────────────────── */
+  /* Shadow is NOT a primary tool in CRTIC's visual language.
+     Depth is communicated through background color contrast.
+     Use shadows sparingly, only for floating UI elements.   */
+  --shadow-none:   none;
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.18);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.24);
+
+  /* ── TRANSITIONS ────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+}
+
+/* ── BASE ELEMENT STYLES ────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-md);
+  font-weight: var(--weight-regular);
+  color: var(--fg-primary);
+  background: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── SEMANTIC HEADING STYLES ────────────────────────────────── */
+
+/* H1 — Max-impact display (Bebas Neue) */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: var(--weight-regular); /* Bebas is inherently black */
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--fg-primary);
+}
+
+/* H2 — Section display (Bebas Neue) */
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: var(--weight-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+}
+
+/* H3 — UI heading (Barlow Condensed Bold) */
+h3, .h3 {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-xl);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
+}
+
+/* H4 — Sub-label heading */
+h4, .h4 {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-md);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Eyebrow / section label */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-label);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--fg-secondary);
+}
+
+/* Body paragraph */
+p, .body {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-md);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-primary);
+}
+
+/* Editorial emphasis — Playfair italic */
+em, .editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Diamond separator */
+.diamond-rule {
+  font-size: 12px;
+  letter-spacing: 8px;
+  color: var(--crtic-gray-light);
+  text-align: center;
+  padding: 16px 0;
+  user-select: none;
+}
+
+/* Display number (section counter) */
+.display-number {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: var(--weight-regular);
+  color: var(--crtic-orange);
+  line-height: 1;
+}
+
+/* Background text watermark */
+.bg-text {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2xl);
+  font-weight: var(--weight-regular);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  position: absolute;
+}
+
+/* ── UTILITY CLASSES ────────────────────────────────────────── */
+
+.text-orange  { color: var(--crtic-orange); }
+.text-white   { color: var(--crtic-white); }
+.text-black   { color: var(--crtic-black); }
+.text-gray    { color: var(--crtic-gray-mid); }
+.text-yellow  { color: var(--crtic-yellow); }
+
+.bg-orange    { background-color: var(--crtic-orange); }
+.bg-ink       { background-color: var(--crtic-ink); }
+.bg-black     { background-color: var(--crtic-black); }
+.bg-white     { background-color: var(--crtic-white); }
+.bg-subtle    { background-color: var(--bg-subtle); }
+
+.uppercase    { text-transform: uppercase; }
+.tracking-label { letter-spacing: var(--tracking-widest); }
+
+/* ── SECTION RHYTHM ─────────────────────────────────────────── */
+/* Per brand guide: alternate orange → black → white → ink → orange */
+
+.section {
+  padding: var(--section-pad-desktop) var(--section-pad-desktop);
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: var(--section-pad-mobile) 24px;
+  }
+}

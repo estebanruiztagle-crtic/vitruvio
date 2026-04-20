@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Bebas Neue'; src: url('../fonts/BebasNeue-Regular.ttf') format('truetype'); font-weight: 400; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-weight: 700; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-Regular.ttf') format('truetype'); font-weight: 400; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1C1F23; overflow: hidden; }
+
+  .bebas  { font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; line-height: 0.9; }
+  .serif  { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; line-height: 1; }
+  .barlow { font-family: 'Barlow Condensed', Arial, sans-serif; font-weight: 700; text-transform: uppercase; }
+
+  /* Layout */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; height: 100vh; }
+
+  /* LEFT — Technology */
+  .left { background: #000; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(255,255,255,0.05); }
+  .left .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: #7D7D7D; }
+  .left .hero { font-size: 72px; letter-spacing: -2px; color: #FE440D; }
+  .left .sub  { font-size: 28px; letter-spacing: -1px; color: #FFFFFF; margin-top: -8px; }
+  .left .list { display: flex; flex-direction: column; gap: 3px; }
+  .left .item { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #7D7D7D; }
+  .left .item span { color: #FE440D; margin-right: 6px; }
+
+  /* RIGHT — Creativity */
+  .right { background: #FE440D; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+  .right .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .right .hero-r { font-size: 68px; color: #1C1F23; }
+  .right .serif-lg { font-size: 58px; color: #FFFFFF; margin-top: -4px; }
+  .right .quote { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.7); border-left: 2px solid rgba(255,255,255,0.3); padding-left: 12px; max-width: 240px; }
+
+  /* Bottom row */
+  .bottom { grid-column: 1 / -1; background: #1C1F23; padding: 18px 32px; display: flex; gap: 32px; align-items: baseline; border-top: 1px solid rgba(255,255,255,0.05); }
+  .mix-line { display: flex; align-items: baseline; gap: 10px; }
+  .mix-bebas { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #FFFFFF; text-transform: uppercase; letter-spacing: -0.5px; }
+  .mix-serif { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 26px; color: #FE440D; }
+  .mix-label { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #7D7D7D; margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="grid">
+  <!-- TECHNOLOGY -->
+  <div class="left">
+    <div class="eyebrow">Tecnología</div>
+    <div>
+      <div class="bebas hero">MOCAP.</div>
+      <div class="bebas sub">IA GENERATIVA.</div>
+    </div>
+    <div class="list">
+      <div class="item"><span>→</span>Projection Mapping</div>
+      <div class="item"><span>→</span>Espacialización Sonora</div>
+      <div class="item"><span>→</span>Realidad Extendida</div>
+    </div>
+  </div>
+
+  <!-- CREATIVITY -->
+  <div class="right">
+    <div class="eyebrow">Arte</div>
+    <div>
+      <div class="bebas hero-r">EL ARTE</div>
+      <div class="serif serif-lg">del artista.</div>
+    </div>
+    <div class="quote">Prototipar. Validar. Escalar.<br/>El MVP diseñado para exportarse desde el día uno.</div>
+  </div>
+
+  <!-- MIXED BOTTOM BAR -->
+  <div class="bottom">
+    <div class="mix-line">
+      <span class="mix-bebas">ART THINKING</span>
+      <span class="mix-serif">+ tecnología</span>
+      <span class="mix-bebas">CREATIVA</span>
+    </div>
+    <div class="mix-label">Bebas Neue + Playfair Display — tensión tipográfica de marca</div>
+  </div>
+</div>
+</body>
+</html>

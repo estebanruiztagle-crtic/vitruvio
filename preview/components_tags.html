@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; padding: 24px; font-family: 'Barlow Condensed', Arial, sans-serif; }
+  .label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #7D7D7D; margin-bottom: 12px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .tag { display: inline-block; padding: 6px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 100px; }
+  .tag-orange { background: #FE440D; color: white; }
+  .tag-ink { background: #1C1F23; color: white; }
+  .tag-outline { background: transparent; color: #1C1F23; border: 1.5px solid #1C1F23; }
+  .tag-outline-orange { background: transparent; color: #FE440D; border: 1.5px solid #FE440D; }
+  .tag-gray { background: #F0F0F0; color: #1C1F23; }
+  .tag-yellow { background: #FFDE58; color: #1C1F23; }
+  .pill-section { background: #1C1F23; padding: 14px 16px; border-radius: 6px; margin-top: 4px; }
+  .eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 4px 0; }
+  .number-badge { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: #FE440D; line-height: 1; margin-right: 4px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="label">Tags & Labels</div>
+  <div class="row">
+    <span class="tag tag-orange">Tecnología</span>
+    <span class="tag tag-ink">Residencia</span>
+    <span class="tag tag-outline">Prototipo</span>
+    <span class="tag tag-outline-orange">MVP</span>
+    <span class="tag tag-gray">Inmersivo</span>
+    <span class="tag tag-yellow">Hito</span>
+  </div>
+  <div class="pill-section">
+    <div class="row" style="margin-bottom:0; align-items:center;">
+      <div class="eyebrow">01 — CATEGORÍA</div>
+      <span class="tag tag-orange" style="margin-left:auto;">ACTIVO</span>
+    </div>
+  </div>
+  <div style="margin-top:16px; display:flex; align-items:baseline; gap:6px;">
+    <span class="number-badge">01</span>
+    <span style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#7D7D7D;">Display number como ícono de sección</span>
+  </div>
+</body>
+</html>

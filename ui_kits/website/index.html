@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRTIC — Website UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Bebas Neue'; src: url('../../fonts/BebasNeue-Regular.ttf') format('truetype'); font-weight: 400; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('../../fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F5F5; font-family: 'Barlow Condensed', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { cursor: pointer; }
+</style>
+</head>
+<body>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Section.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+// ── PAGE VIEWS ──────────────────────────────────────────────
+
+const HomePage = () => (
+  <>
+    <Hero variant="orange" />
+
+    {/* Diamond separator */}
+    <div style={{ background: "#fff", textAlign: "center", padding: "14px", fontSize: 12, letterSpacing: 8, color: "#D8D6D8" }}>◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆</div>
+
+    {/* Technologies section */}
+    <Section
+      variant="dark"
+      number={1}
+      eyebrow="Tecnologías disponibles"
+      headline="LO QUE"
+      headlineItalic="hacemos"
+    >
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12, marginTop: 32 }}>
+        {[
+          { n: 1, title: "MOCAP", tags: ["Captura", "3D"] },
+          { n: 2, title: "IA GENERATIVA", tags: ["Imagen", "Texto", "Sonido"] },
+          { n: 3, title: "PROJECTION MAPPING", tags: ["Visual", "Espacial"] },
+          { n: 4, title: "ESPACIALIZACIÓN SONORA", tags: ["Audio", "3D"] },
+          { n: 5, title: "VIDEOJUEGOS", tags: ["Game Engine", "XR"] },
+          { n: 6, title: "REALIDAD EXTENDIDA", tags: ["AR", "VR", "MR"] },
+        ].map(t => <TechCard key={t.n} number={t.n} title={t.title} tags={t.tags} />)}
+      </div>
+    </Section>
+
+    {/* Quote / positioning */}
+    <section style={{ background: "#000", padding: "64px" }}>
+      <div style={{ fontSize: 11, letterSpacing: 5, textTransform: "uppercase", color: "#7D7D7D", marginBottom: 32 }}>POSICIONAMIENTO</div>
+      <QuoteBlock
+        quote="La tecnología es compartida. El arte es del artista."
+        author="CRTIC — Principio fundacional"
+      />
+      <div style={{ marginTop: 32, display: "flex", gap: 12, flexWrap: "wrap" }}>
+        {["Transferencia", "Prototipo", "Escalar", "Residencia", "Inmersivo"].map(w => (
+          <span key={w} style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 700, fontSize: 11,
+            textTransform: "uppercase", letterSpacing: 1,
+            background: "#FE440D", color: "#fff",
+            padding: "5px 14px", borderRadius: 100,
+          }}>{w}</span>
+        ))}
+      </div>
+    </section>
+
+    {/* Residencies section */}
+    <Section
+      variant="white"
+      number={2}
+      eyebrow="Programa de residencias"
+      headline="RESIDENCIA"
+      headlineItalic="inmersiva"
+      body="Artistas y tecnólogos seleccionados trabajan en el Hub durante 12 semanas. Prototipar. Validar. Escalar. El resultado es un MVP exportable."
+    >
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12, marginTop: 32 }}>
+        {[
+          { phase: "01", title: "SELECCIÓN", desc: "Convocatoria abierta. Criterio: propuesta técnica viable + visión artística clara." },
+          { phase: "02", title: "PROTOTIPO", desc: "12 semanas de trabajo intensivo con acceso completo a tecnologías del Hub." },
+          { phase: "03", title: "VALIDACIÓN", desc: "User Testing con públicos reales. Datos. Iteración basada en evidencia." },
+          { phase: "04", title: "EXPORTACIÓN", desc: "El producto sale del Hub listo para escalar. Arquitectura portátil desde el día uno." },
+        ].map(p => (
+          <div key={p.phase} style={{ padding: "24px", border: "1px solid #E8E8E8", borderRadius: 6 }}>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 40, color: "#FE440D", lineHeight: 1 }}>{p.phase}</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: "#1C1F23", textTransform: "uppercase", letterSpacing: 0.5, margin: "8px 0 6px" }}>{p.title}</div>
+            <div style={{ fontSize: 12, color: "#7D7D7D", lineHeight: 1.7 }}>{p.desc}</div>
+          </div>
+        ))}
+      </div>
+    </Section>
+
+    {/* Orange CTA section */}
+    <section style={{ background: "#FE440D", padding: "64px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
+      <div>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,5vw,56px)", color: "white", textTransform: "uppercase", letterSpacing: -1, lineHeight: 1 }}>EMPECEMOS.</div>
+        <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.75)", marginTop: 8, lineHeight: 1.6, maxWidth: 400 }}>
+          Listo para trabajar. La tecnología está disponible.<br/>El proceso está documentado.
+        </div>
+      </div>
+      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+        <a href="mailto:innovacion@crtic.cl" style={{
+          display: "inline-flex", alignItems: "center", gap: 10,
+          background: "#1C1F23", color: "#fff",
+          fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+          fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5,
+          padding: "13px 24px", borderRadius: 100, textDecoration: "none",
+        }}>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <rect x="0.5" y="0.5" width="15" height="11" rx="1.5" stroke="white" strokeWidth="1.2"/>
+            <path d="M1 1L8 7L15 1" stroke="white" strokeWidth="1.2"/>
+          </svg>
+          INNOVACION@CRTIC.CL
+        </a>
+      </div>
+    </section>
+  </>
+);
+
+const ResidenciasPage = () => (
+  <>
+    <Hero variant="dark" />
+    <Section
+      variant="orange"
+      number={1}
+      eyebrow="Convocatoria 2026"
+      headline="APLICAR A"
+      headlineItalic="residencia"
+      body="Artistas, músicos, performers, diseñadores con una propuesta que necesita tecnología para existir. 12 semanas. Hub equipado. Mentores técnicos. MVP al final."
+    >
+      <div style={{ marginTop: 28 }}>
+        <a href="#" style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          background: "#1C1F23", color: "#fff",
+          fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+          fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5,
+          padding: "13px 24px", borderRadius: 100, textDecoration: "none",
+        }}>DESCARGAR BASES →</a>
+      </div>
+    </Section>
+    <Section
+      variant="dark"
+      eyebrow="Proyectos anteriores"
+      headline="LO QUE"
+      headlineItalic="ya existe"
+      body="Experiencias inmersivas. Instalaciones sonoras. Videojuegos con cuerpo. Documentados, escalables, exportables."
+    />
+    <Footer />
+  </>
+);
+
+const TecnologiasPage = () => (
+  <>
+    <section style={{ background: "#000", padding: "72px 64px" }}>
+      <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, letterSpacing: 5, textTransform: "uppercase", color: "#7D7D7D", marginBottom: 20 }}>Infraestructura disponible</div>
+      <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(64px,9vw,120px)", color: "#fff", textTransform: "uppercase", letterSpacing: -2, lineHeight: 0.9 }}>
+        TECNO<br/>
+        <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "clamp(56px,8vw,108px)", color: "#FE440D", letterSpacing: 0 }}>creativo</span>
+      </h1>
+    </section>
+    <section style={{ background: "#1C1F23", padding: "64px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
+        {[
+          { n: 1, title: "MOCAP", tags: ["OptiTrack", "Captura 3D", "Tiempo Real"] },
+          { n: 2, title: "IA GENERATIVA", tags: ["Imagen", "Texto", "Voz", "Video"] },
+          { n: 3, title: "PROJECTION MAPPING", tags: ["Madmapper", "Resolume"] },
+          { n: 4, title: "SONIDO 3D", tags: ["Ambisónico", "Binaural", "IRCAM"] },
+          { n: 5, title: "GAME ENGINES", tags: ["Unreal 5", "Unity", "WebGL"] },
+          { n: 6, title: "REALIDAD EXTENDIDA", tags: ["AR", "VR", "MR", "Quest 3"] },
+          { n: 7, title: "ROBÓTICA", tags: ["Arduino", "ROS", "Actuadores"] },
+          { n: 8, title: "SÍNTESIS VISUAL", tags: ["TouchDesigner", "Processing"] },
+        ].map(t => <TechCard key={t.n} number={t.n} title={t.title} tags={t.tags} />)}
+      </div>
+    </section>
+    <Footer />
+  </>
+);
+
+// ── ROOT APP ──────────────────────────────────────────────
+
+const PAGES = {
+  home:          { label: "HUB", component: HomePage },
+  residencias:   { label: "RESIDENCIAS", component: ResidenciasPage },
+  tecnologias:   { label: "TECNOLOGÍAS", component: TecnologiasPage },
+};
+
+const App = () => {
+  const saved = localStorage.getItem("crtic_page");
+  const [page, setPage] = useState(saved && PAGES[saved] ? saved : "home");
+
+  const navigate = (p) => { setPage(p); localStorage.setItem("crtic_page", p); window.scrollTo({ top: 0 }); };
+  const PageComponent = PAGES[page]?.component || HomePage;
+
+  const headerThemes = { home: "orange", residencias: "dark", tecnologias: "black" };
+  const t = headerThemes[page] || "dark";
+  const tMap = {
+    orange: { bg: "#FE440D", text: "#FFFFFF", border: "rgba(255,255,255,0.15)", logo: "white", ctaBg: "#1C1F23" },
+    dark:   { bg: "#1C1F23", text: "#FFFFFF", border: "rgba(255,255,255,0.08)", logo: "white", ctaBg: "#FE440D" },
+    black:  { bg: "#000000", text: "#FFFFFF", border: "rgba(255,255,255,0.05)", logo: "white", ctaBg: "#FE440D" },
+  };
+  const th = tMap[t];
+
+  return (
+    <div>
+      {/* Header */}
+      <header style={{
+        background: th.bg, borderBottom: `1px solid ${th.border}`,
+        padding: "0 48px", display: "flex", alignItems: "center",
+        justifyContent: "space-between", height: 64,
+        position: "sticky", top: 0, zIndex: 100,
+      }}>
+        <img src="../../assets/logo_white.png" alt="CRTIC" style={{ height: 28 }} />
+        <nav style={{ display: "flex", gap: 28, alignItems: "center" }}>
+          {Object.entries(PAGES).map(([key, { label }]) => (
+            <button key={key} onClick={() => navigate(key)} style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontWeight: 700, fontSize: 12,
+              textTransform: "uppercase", letterSpacing: 2,
+              color: page === key ? "#FE440D" : th.text,
+              background: "none", border: "none", cursor: "pointer",
+              opacity: page === key ? 1 : 0.75,
+              transition: "color 150ms, opacity 150ms",
+            }}>{label}</button>
+          ))}
+          <button style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 700, fontSize: 11,
+            textTransform: "uppercase", letterSpacing: 1,
+            background: th.ctaBg, color: "#fff",
+            border: "none", cursor: "pointer",
+            padding: "8px 16px", borderRadius: 100,
+          }}>CONTACTO →</button>
+        </nav>
+      </header>
+
+      <PageComponent />
+
+      {page !== "tecnologias" && page !== "residencias" && <Footer />}
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>

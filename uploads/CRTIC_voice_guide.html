@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRTIC — Manual de Voz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FE440D;
+    --orange-alt: #FF4512;
+    --ink: #1C1F23;
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray-light: #D8D6D8;
+    --gray-mid: #7D7D7D;
+    --yellow: #FFDE58;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--orange);
+    padding: 72px 64px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(56px, 8vw, 112px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 0.9;
+    letter-spacing: -2px;
+  }
+  .hero h1 em {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .hero-sub {
+    margin-top: 32px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+  .hero-bg-text {
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.08);
+    text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* ── TENSIÓN CENTRAL ── */
+  .tension {
+    background: var(--ink);
+    padding: 64px;
+  }
+  .tension-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 32px;
+  }
+  .tension-statement {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+  .tension-statement em {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .tension-quote {
+    margin-top: 40px;
+    border-left: 3px solid var(--orange);
+    padding-left: 24px;
+    font-size: 15px;
+    color: var(--gray-light);
+    line-height: 1.8;
+    max-width: 600px;
+    font-style: italic;
+  }
+
+  /* ── SECTION BASE ── */
+  .section {
+    padding: 64px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  .section-number {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--gray-mid);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  /* ── REGLA CARDS ── */
+  .rules-grid {
+    display: grid;
+    gap: 2px;
+  }
+  .rule {
+    display: grid;
+    grid-template-columns: 48px 1fr 1fr;
+    gap: 0;
+    background: var(--black);
+    overflow: hidden;
+    border-radius: 0;
+  }
+  .rule:first-child { border-radius: 8px 8px 0 0; }
+  .rule:last-child { border-radius: 0 0 8px 8px; }
+  .rule-num {
+    background: var(--orange);
+    color: var(--white);
+    font-family: Arial Black, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 8px;
+  }
+  .rule-do {
+    background: var(--ink);
+    padding: 24px 28px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .rule-dont {
+    background: #111316;
+    padding: 24px 28px;
+  }
+  .rule-label {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .rule-label.do { color: var(--yellow); }
+  .rule-label.dont { color: var(--gray-mid); }
+  .rule-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--white);
+  }
+  .rule-text.crossed {
+    color: var(--gray-mid);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,69,18,0.5);
+  }
+
+  /* ── MATRIX DE ADJETIVOS ── */
+  .adj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .adj-card {
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+  }
+  .adj-word {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .adj-neg {
+    font-size: 11px;
+    color: var(--gray-mid);
+    text-decoration: line-through;
+  }
+  .adj-card.highlight {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+  .adj-card.highlight .adj-word { color: var(--white); }
+  .adj-card.highlight .adj-neg { color: rgba(255,255,255,0.5); text-decoration-color: rgba(255,255,255,0.3); }
+
+  /* ── EJEMPLOS DE ESCRITURA ── */
+  .examples-block {
+    margin-top: 8px;
+  }
+  .example-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .example-box {
+    padding: 20px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .example-box.good {
+    background: var(--ink);
+    color: var(--white);
+    border-left: 3px solid var(--orange);
+  }
+  .example-box.bad {
+    background: #F5F5F5;
+    color: var(--gray-mid);
+    border-left: 3px solid #E0E0E0;
+    text-decoration: line-through;
+    text-decoration-color: rgba(0,0,0,0.15);
+  }
+  .example-tag {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .good .example-tag { color: var(--yellow); }
+  .bad .example-tag { color: var(--gray-mid); }
+
+  /* ── CONSTRUCCIÓN SINTÁCTICA ── */
+  .syntax-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .syntax-card {
+    padding: 24px;
+    border-radius: 8px;
+    background: var(--ink);
+    color: var(--white);
+  }
+  .syntax-pattern {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .syntax-example {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray-light);
+    font-style: italic;
+  }
+  .syntax-note {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--gray-mid);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── PALABRAS PROHIBIDAS ── */
+  .forbidden-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .forbidden-pill {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #F5F5F5;
+    color: var(--gray-mid);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,69,18,0.4);
+  }
+  .allowed-pill {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--orange);
+    color: var(--white);
+  }
+
+  /* ── SECCIÓN NEGRA ── */
+  .section-dark {
+    background: var(--black);
+    padding: 64px;
+  }
+  .section-dark .section-number { color: var(--orange); }
+  .section-dark .section-title { color: var(--white); }
+  .section-dark .section-sub { color: var(--gray-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--orange);
+    padding: 40px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .brand {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+  footer .meta {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── SEPARADOR DIAMANTE ── */
+  .diamond-rule {
+    padding: 16px 64px;
+    font-size: 12px;
+    letter-spacing: 8px;
+    color: var(--gray-light);
+    background: var(--white);
+    text-align: center;
+  }
+
+  @media (max-width: 700px) {
+    .hero, .tension, .section, .section-dark { padding: 40px 24px; }
+    .rule { grid-template-columns: 40px 1fr; }
+    .rule-dont { display: none; }
+    .example-row { grid-template-columns: 1fr; }
+    footer { padding: 32px 24px; }
+    .diamond-rule { padding: 16px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Centro para la Revolución Tecnológica en Industrias Creativas</div>
+  <h1>MANUAL<br>DE <em>Voz</em><br>CRTIC</h1>
+  <p class="hero-sub">Reglas operativas para escribir con la voz de la marca. Para quien redacta propuestas, comunicados, presentaciones y cualquier pieza de comunicación que lleve el nombre CRTIC.</p>
+  <div class="hero-bg-text">VOZ</div>
+</div>
+
+<!-- TENSIÓN CENTRAL -->
+<div class="tension">
+  <div class="tension-label">00 — La tensión que define la marca</div>
+  <div class="tension-statement">Institución pública<br>que habla como <em>vanguardia</em><br>que tiene todo que ganar.</div>
+  <div class="tension-quote">
+    Esta contradicción no se resuelve. Se mantiene en tensión permanente. Cuando la comunicación de CRTIC se vuelve demasiado institucional, pierde la actitud. Cuando se vuelve demasiado informal, pierde la autoridad. El trabajo es sostener las dos fuerzas a la vez, en cada frase.
+  </div>
+</div>
+
+<div class="diamond-rule">◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆</div>
+
+<!-- REGLA 1: DECLARAR, NO EXPLICAR -->
+<div class="section">
+  <div class="section-number">01</div>
+  <div class="section-title">Declarar, no explicar</div>
+  <div class="section-sub">Principio estructural de escritura</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:#444; margin-bottom:36px;">
+    CRTIC no solicita comprensión. Afirma realidades. Cada frase debe cerrar, no abrir. El lector no necesita que le expliquen por qué algo es importante — necesita que se lo digan con tal convicción que no lo cuestione.
+  </p>
+
+  <div class="rules-grid">
+    <div class="rule">
+      <div class="rule-num">→</div>
+      <div class="rule-do">
+        <div class="rule-label do">Escribir así</div>
+        <div class="rule-text">"Somos dos instituciones con una misión cultural."</div>
+      </div>
+      <div class="rule-dont">
+        <div class="rule-label dont">No así</div>
+        <div class="rule-text crossed">"Somos un espacio colaborativo donde exploramos sinergias entre el sector cultural y tecnológico."</div>
+      </div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">→</div>
+      <div class="rule-do">
+        <div class="rule-label do">Escribir así</div>
+        <div class="rule-text">"La tecnología es compartida. El arte es del artista."</div>
+      </div>
+      <div class="rule-dont">
+        <div class="rule-label dont">No así</div>
+        <div class="rule-text crossed">"Buscamos generar un modelo de colaboración donde ambas partes puedan beneficiarse de los avances tecnológicos respetando la autoría artística."</div>
+      </div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">→</div>
+      <div class="rule-do">
+        <div class="rule-label do">Escribir así</div>
+        <div class="rule-text">"Listo para trabajar. Empecemos."</div>
+      </div>
+      <div class="rule-dont">
+        <div class="rule-label dont">No así</div>
+        <div class="rule-text crossed">"Esperamos poder establecer una colaboración fructífera en el corto plazo que nos permita avanzar juntos hacia los objetivos planteados."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGLA 2: ANTICIPAR LA OBJECIÓN -->
+<div class="section" style="background:#F9F9F9;">
+  <div class="section-number">02</div>
+  <div class="section-title">Anticipar la objeción</div>
+  <div class="section-sub">El corchete como arma retórica</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:#444; margin-bottom:36px;">
+    CRTIC sabe cómo puede ser malinterpretada y lo dice primero. Ese movimiento —nombrar la duda antes de que el lector la formule— construye credibilidad sin defensividad. El corchete es el recurso tipográfico de esta operación: indica que lo que viene es un paréntesis crítico, no una excusa.
+  </p>
+
+  <div class="examples-block">
+    <div class="example-row">
+      <div class="example-box good">
+        <span class="example-tag">✦ patrón correcto</span>
+        [NO SOMOS UNA EMPRESA BUSCANDO SU PRÓXIMO ÉXITO DE VENTAS]<br><br>
+        Como fundación sin fines de lucro buscamos crear un modelo de transferencia tecnológica, experiencia escalable y autosustentable.
+      </div>
+      <div class="example-box bad">
+        <span class="example-tag">✕ patrón a evitar</span>
+        Nuestra propuesta de valor se diferencia de la competencia en que priorizamos el impacto social sobre la rentabilidad comercial, lo que nos permite ofrecer soluciones más alineadas con los valores del sector público.
+      </div>
+    </div>
+    <div class="example-row">
+      <div class="example-box good">
+        <span class="example-tag">✦ patrón correcto</span>
+        [ESTO NO ES UN PROYECTO PILOTO SIN SALIDA]<br><br>
+        El MVP está diseñado para exportarse. La arquitectura es portátil desde el día uno.
+      </div>
+      <div class="example-box bad">
+        <span class="example-tag">✕ patrón a evitar</span>
+        Si bien se trata de un prototipo inicial, confiamos en que tiene el potencial de escalar a mercados internacionales una vez validado el modelo en el mercado local.
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:24px; font-size:13px; color:var(--gray-mid); max-width:560px; line-height:1.7;">
+    <strong>Regla de uso:</strong> El corchete se usa máximo una vez por sección. Si se usa en exceso, se convierte en postura y pierde su fuerza.
+  </p>
+</div>
+
+<!-- REGLA 3: PARIDAD CON EL LECTOR -->
+<div class="section">
+  <div class="section-number">03</div>
+  <div class="section-title">Paridad con el lector</div>
+  <div class="section-sub">No explicar lo que ya saben</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:#444; margin-bottom:36px;">
+    CRTIC no traduce sus términos técnicos ni los justifica. Los usa porque asume que el interlocutor ya sabe. Eso posiciona al lector como par —alguien del mismo nivel— y a la institución como referente, no como divulgador. La explicación rebaja. La precisión eleva.
+  </p>
+
+  <div class="syntax-grid">
+    <div class="syntax-card">
+      <div class="syntax-pattern">Anglicismos técnicos sin traducción</div>
+      <div class="syntax-example">"Empaquetamiento del producto (Plug & Play) para exportación."</div>
+      <div class="syntax-note">No "lista para usar sin configuración adicional".</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Siglas sin definir</div>
+      <div class="syntax-example">"Escalar a un MVP para su exportación internacional."</div>
+      <div class="syntax-note">No "Producto Mínimo Viable (MVP, por sus siglas en inglés)".</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Términos de proceso como hechos</div>
+      <div class="syntax-example">"Validación con público y recolección de datos. User Testing."</div>
+      <div class="syntax-note">El proceso se nombra, no se explica.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Hitos con fecha como realidades</div>
+      <div class="syntax-example">"Hito 12 de abril: Estrenar una experiencia inmersiva al aire libre."</div>
+      <div class="syntax-note">No "esperamos poder presentar" ni "el objetivo es".</div>
+    </div>
+  </div>
+</div>
+
+<!-- REGLA 4: ÉPICA CONTENIDA -->
+<div class="section" style="background:var(--ink);">
+  <div class="section-number" style="color:var(--orange);">04</div>
+  <div class="section-title" style="color:var(--white);">Épica contenida</div>
+  <div class="section-sub">El tamaño hace el trabajo emocional</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:var(--gray-light); margin-bottom:36px;">
+    La grandeza de CRTIC no se explica con adjetivos. Se construye con economía de palabras y se amplifica con escala tipográfica. En textos donde no hay control de tamaño —emails, propuestas en Word, mensajes— la contención verbal debe ser aún más disciplinada. Ningún adjetivo vacío. Ningún superlativo. Hechos, verbos, datos.
+  </p>
+
+  <div class="adj-grid">
+    <div class="adj-card highlight">
+      <div class="adj-word">Pionero</div>
+      <div class="adj-neg">innovador / revolucionario</div>
+    </div>
+    <div class="adj-card" style="background:#252830; border-color:#333;">
+      <div class="adj-word" style="color:var(--white);">Preciso</div>
+      <div class="adj-neg">exacto / riguroso / meticuloso</div>
+    </div>
+    <div class="adj-card" style="background:#252830; border-color:#333;">
+      <div class="adj-word" style="color:var(--white);">Escalable</div>
+      <div class="adj-neg">flexible / adaptable / versátil</div>
+    </div>
+    <div class="adj-card" style="background:#252830; border-color:#333;">
+      <div class="adj-word" style="color:var(--white);">Directo</div>
+      <div class="adj-neg">transparente / abierto / honesto</div>
+    </div>
+    <div class="adj-card" style="background:#252830; border-color:#333;">
+      <div class="adj-word" style="color:var(--white);">Documentado</div>
+      <div class="adj-neg">trazable / auditable / medible</div>
+    </div>
+    <div class="adj-card" style="background:#252830; border-color:#333;">
+      <div class="adj-word" style="color:var(--white);">Exportable</div>
+      <div class="adj-neg">replicable / transferible / aplicable</div>
+    </div>
+  </div>
+
+  <p style="margin-top:28px; font-size:13px; color:var(--gray-mid); max-width:560px; line-height:1.7;">
+    <strong style="color:var(--gray-light);">Regla de adjetivos:</strong> Máximo un adjetivo calificativo por párrafo. Si necesitas dos, elimina ambos y busca un dato concreto que haga el trabajo.
+  </p>
+</div>
+
+<!-- REGLA 5: PALABRAS PROHIBIDAS / PERMITIDAS -->
+<div class="section-dark">
+  <div class="section-number">05</div>
+  <div class="section-title" style="color:var(--white);">Vocabulario de la marca</div>
+  <div class="section-sub">Palabras que construyen vs. palabras que destruyen</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:var(--gray-light); margin-bottom:36px;">
+    Hay palabras que suenan a PowerPoint genérico de consultoría y palabras que suenan a CRTIC. La diferencia no es semántica, es actitudinal. Las primeras cubren, las segundas exponen.
+  </p>
+
+  <p style="font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gray-mid); margin-bottom:12px;">Palabras prohibidas</p>
+  <div class="forbidden-grid" style="margin-bottom:40px;">
+    <span class="forbidden-pill">Sinergias</span>
+    <span class="forbidden-pill">Ecosistema</span>
+    <span class="forbidden-pill">Potenciar</span>
+    <span class="forbidden-pill">Visibilizar</span>
+    <span class="forbidden-pill">Articular</span>
+    <span class="forbidden-pill">Transversal</span>
+    <span class="forbidden-pill">Generar valor</span>
+    <span class="forbidden-pill">De cara al</span>
+    <span class="forbidden-pill">En el marco de</span>
+    <span class="forbidden-pill">Robusto</span>
+    <span class="forbidden-pill">Holístico</span>
+    <span class="forbidden-pill">Empoderamiento</span>
+    <span class="forbidden-pill">Democratizar</span>
+    <span class="forbidden-pill">Disruptivo</span>
+    <span class="forbidden-pill">Soluciones integrales</span>
+  </div>
+
+  <p style="font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gray-mid); margin-bottom:12px;">Palabras que suenan a CRTIC</p>
+  <div class="forbidden-grid">
+    <span class="allowed-pill">Transferencia</span>
+    <span class="allowed-pill">Prototipo</span>
+    <span class="allowed-pill">Exportar</span>
+    <span class="allowed-pill">Validar</span>
+    <span class="allowed-pill">Escalar</span>
+    <span class="allowed-pill">Hito</span>
+    <span class="allowed-pill">Autosustentable</span>
+    <span class="allowed-pill">Iteración</span>
+    <span class="allowed-pill">Arquitectura</span>
+    <span class="allowed-pill">Portabilidad</span>
+    <span class="allowed-pill">Residencia</span>
+    <span class="allowed-pill">Inmersivo</span>
+    <span class="allowed-pill">Gobernanza</span>
+    <span class="allowed-pill">Co-creador</span>
+  </div>
+</div>
+
+<div class="diamond-rule" style="background:#F5F5F5;">◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆</div>
+
+<!-- REGLA 6: CONSTRUCCIÓN DE FRASES -->
+<div class="section">
+  <div class="section-number">06</div>
+  <div class="section-title">Construcción de frases</div>
+  <div class="section-sub">Patrones sintácticos de la marca</div>
+
+  <p style="font-size:15px; line-height:1.8; max-width:640px; color:#444; margin-bottom:36px;">
+    La voz de CRTIC tiene patrones sintácticos reconocibles. No son fórmulas rígidas —son estructuras que, cuando se repiten, crean coherencia y ritmo. Úsalos como referencia, no como plantilla.
+  </p>
+
+  <div class="syntax-grid">
+    <div class="syntax-card">
+      <div class="syntax-pattern">Frase. Frase corta que la remata.</div>
+      <div class="syntax-example">"La tecnología es compartida. El arte es del artista."</div>
+      <div class="syntax-note">Dos frases en tensión. La segunda golpea sobre la primera.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Verbo en infinitivo como título de acción</div>
+      <div class="syntax-example">"Explorar la espacialización sonora.<br>Prototipar. Validar. Escalar."</div>
+      <div class="syntax-note">Sin sujeto explícito. La institución está implícita.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Número + acción + fecha = hecho</div>
+      <div class="syntax-example">"Hito 12 de abril: estrenar la experiencia en el Parque de las Esculturas."</div>
+      <div class="syntax-note">No promesa. No objetivo. Hecho programado.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">[Negación entre corchetes] + afirmación</div>
+      <div class="syntax-example">"[NO SOMOS UNA EMPRESA BUSCANDO VENTAS] Somos una fundación que construye infraestructura cultural."</div>
+      <div class="syntax-note">La negación limpia el terreno para la afirmación.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Cita propia entre comillas tipográficas</div>
+      <div class="syntax-example">"La tecnología es compartida, el arte es del Artista."</div>
+      <div class="syntax-note">Posicionamiento ideológico, no descripción funcional.</div>
+    </div>
+    <div class="syntax-card">
+      <div class="syntax-pattern">Enumeración sin nexo</div>
+      <div class="syntax-example">"Sonido inmersivo. MOCAP. IA generativa. Projection mapping. Videojuegos."</div>
+      <div class="syntax-note">Sin "y", sin "también". La lista acumula peso por yuxtaposición.</div>
+    </div>
+  </div>
+</div>
+
+<!-- REGLA 7: TEST DE VOZ -->
+<div class="section" style="background:var(--orange);">
+  <div class="section-number" style="color:rgba(255,255,255,0.3);">07</div>
+  <div class="section-title" style="color:var(--white);">Test de voz</div>
+  <div class="section-sub" style="color:rgba(255,255,255,0.6);">Tres preguntas antes de publicar</div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px; margin-top:8px;">
+    <div style="background:rgba(0,0,0,0.15); padding:28px; border-radius:8px;">
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:40px; font-weight:900; color:white; opacity:0.3; line-height:1; margin-bottom:12px;">01</div>
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:16px; font-weight:900; color:white; text-transform:uppercase; margin-bottom:10px;">¿Declara o explica?</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.75); line-height:1.7;">Si la frase termina en "...lo que nos permite..." o "...con el objetivo de...", está explicando. Córtala ahí y quédate con la declaración.</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.15); padding:28px; border-radius:8px;">
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:40px; font-weight:900; color:white; opacity:0.3; line-height:1; margin-bottom:12px;">02</div>
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:16px; font-weight:900; color:white; text-transform:uppercase; margin-bottom:10px;">¿Podría haberlo escrito cualquiera?</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.75); line-height:1.7;">Si la frase podría aparecer en la propuesta de cualquier institución cultural de Chile, no es voz CRTIC. Debe sonar como que solo nosotros podemos decirlo.</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.15); padding:28px; border-radius:8px;">
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:40px; font-weight:900; color:white; opacity:0.3; line-height:1; margin-bottom:12px;">03</div>
+      <div style="font-family:Arial Black,Arial,sans-serif; font-size:16px; font-weight:900; color:white; text-transform:uppercase; margin-bottom:10px;">¿Hay un verbo de acción antes del tercer renglón?</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.75); line-height:1.7;">Si los primeros tres renglones no contienen un verbo que implique movimiento o decisión, la frase es descriptiva, no declarativa. Empieza por el verbo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="brand">CRTIC</div>
+  <div class="meta">Manual de Voz — v1.0 — 2026</div>
+</footer>
+
+</body>
+</html>

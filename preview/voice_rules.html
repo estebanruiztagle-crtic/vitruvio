@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bebas+Neue&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1C1F23; font-family: 'Barlow Condensed', Arial, sans-serif; }
+  .block { padding: 28px 32px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: #FE440D; line-height: 1; margin-bottom: 4px; }
+  .title { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: white; margin-bottom: 6px; }
+  .good { font-size: 13px; color: white; line-height: 1.6; border-left: 2px solid #FE440D; padding-left: 12px; margin-bottom: 8px; }
+  .bad { font-size: 12px; color: #7D7D7D; line-height: 1.6; text-decoration: line-through; text-decoration-color: rgba(254,68,13,0.4); }
+  .bracket { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .bracket-note { font-size: 11px; color: #7D7D7D; letter-spacing: 0.03em; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill { padding: 5px 12px; border-radius: 100px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .pill-ok { background: #FE440D; color: white; }
+  .pill-no { background: #252830; color: #7D7D7D; text-decoration: line-through; }
+</style>
+</head>
+<body>
+  <div class="block">
+    <div class="num">01</div>
+    <div class="title">Declarar, no explicar</div>
+    <div class="good">"La tecnología es compartida. El arte es del artista."</div>
+    <div class="bad">"Buscamos generar un modelo donde ambas partes se beneficien de los avances tecnológicos."</div>
+  </div>
+  <div class="block">
+    <div class="num">02</div>
+    <div class="title">El corchete como arma retórica</div>
+    <div class="bracket">[NO SOMOS UNA EMPRESA BUSCANDO VENTAS]</div>
+    <div class="bracket-note">Como fundación sin fines de lucro construimos infraestructura cultural.</div>
+  </div>
+  <div class="block">
+    <div class="num">03</div>
+    <div class="title">Vocabulario de marca</div>
+    <div class="pills">
+      <span class="pill pill-ok">Transferencia</span>
+      <span class="pill pill-ok">Escalar</span>
+      <span class="pill pill-ok">Prototipo</span>
+      <span class="pill pill-ok">Hito</span>
+      <span class="pill pill-ok">Iteración</span>
+      <span class="pill pill-no">Sinergias</span>
+      <span class="pill pill-no">Disruptivo</span>
+      <span class="pill pill-no">Holístico</span>
+    </div>
+  </div>
+</body>
+</html>

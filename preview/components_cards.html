@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bebas+Neue&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F5F5; padding: 24px; font-family: 'Barlow Condensed', Arial, sans-serif; display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .card { border-radius: 6px; overflow: hidden; width: 200px; }
+  /* Dark card */
+  .card-dark { background: #1C1F23; }
+  .card-dark .card-body { padding: 20px; }
+  .card-dark .tag { display: inline-block; background: #FE440D; color: white; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
+  .card-dark h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.1; margin-bottom: 8px; }
+  .card-dark p { font-size: 12px; color: #D8D6D8; line-height: 1.6; }
+  /* Orange card */
+  .card-orange { background: #FE440D; }
+  .card-orange .card-body { padding: 20px; }
+  .card-orange .number { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: rgba(255,255,255,0.2); line-height: 1; }
+  .card-orange h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px; }
+  .card-orange p { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  /* White card */
+  .card-white { background: white; border: 1px solid #E8E8E8; }
+  .card-white .card-top { height: 6px; background: #FE440D; }
+  .card-white .card-body { padding: 20px; }
+  .card-white h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #1C1F23; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+  .card-white p { font-size: 12px; color: #7D7D7D; line-height: 1.6; }
+  .card-white .arrow { margin-top: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FE440D; }
+</style>
+</head>
+<body>
+  <div class="card card-dark">
+    <div class="card-body">
+      <div class="tag">Residencia</div>
+      <h3>INMERSIÓN SONORA</h3>
+      <p>Espacialización 3D. MOCAP. Projection mapping en tiempo real.</p>
+    </div>
+  </div>
+  <div class="card card-orange">
+    <div class="card-body">
+      <div class="number">01</div>
+      <h3>PROTOTIPAR</h3>
+      <p>El MVP está diseñado para exportarse desde el día uno.</p>
+    </div>
+  </div>
+  <div class="card card-white">
+    <div class="card-top"></div>
+    <div class="card-body">
+      <h3>TRANSFERENCIA</h3>
+      <p>Arquitectura portátil. Escalar. Documentar. Exportar.</p>
+      <div class="arrow">VER MÁS →</div>
+    </div>
+  </div>
+</body>
+</html>
