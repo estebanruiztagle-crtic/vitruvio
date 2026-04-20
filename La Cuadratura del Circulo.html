@@ -515,6 +515,13 @@ footer {
 .footer-contact:hover { color: var(--orange); }
 .diamond { font-size: 12px; letter-spacing: 8px; color: rgba(255,255,255,0.08); }
 
+/* ── ASSET MOTIFS ── */
+.motif {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ── MISC ── */
 .section-num {
   font-family: var(--bebas); font-size: 64px; color: var(--orange);
@@ -551,6 +558,8 @@ footer {
     <div class="hero-cross-h"></div>
     <div class="hero-cross-v"></div>
   </div>
+  <img src="assets/motif_4circles_white.png" aria-hidden="true" style="position:absolute;top:-80px;right:-80px;width:min(55vw,520px);opacity:0.06;pointer-events:none;">
+  <img src="assets/motif_semicircles_up.png" aria-hidden="true" style="position:absolute;bottom:0;left:0;width:min(30vw,280px);opacity:0.1;pointer-events:none;">
 
   <div class="hero-eyebrow">VALDIVIA NÓMADE — CRTIC × CNC · Proyecto I+D+i 2026–2027</div>
   <h1 class="hero-title">
@@ -580,6 +589,8 @@ footer {
 <!-- CONCEPTO -->
 <section id="concepto">
   <div class="concept-bg-text" aria-hidden="true">VITRUVIO</div>
+  <img src="assets/motif_flor_black.png" aria-hidden="true" style="position:absolute;bottom:-40px;right:-40px;width:min(40vw,360px);opacity:0.12;pointer-events:none;">
+  <img src="assets/motif_semicircles_left.png" aria-hidden="true" style="position:absolute;top:0;right:0;width:min(18vw,160px);opacity:0.15;pointer-events:none;">
   <div class="section-label">01 — El concepto creativo</div>
   <h2 class="concept-heading">
     LO ANTIGUO<br>
@@ -596,7 +607,9 @@ footer {
 </section>
 
 <!-- VITRUVIO / DUALIDAD -->
-<section id="dualidad">
+<section id="dualidad" style="position:relative;overflow:hidden;">
+  <img src="assets/motif_semicircles_right_orange.png" aria-hidden="true" style="position:absolute;top:50%;left:-60px;transform:translateY(-50%);width:min(20vw,180px);opacity:0.12;pointer-events:none;">
+  <img src="assets/motif_4circles_orange.png" aria-hidden="true" style="position:absolute;bottom:-60px;right:-60px;width:min(35vw,320px);opacity:0.08;pointer-events:none;">
   <div id="vitruvio">
     <div class="section-label dark">02 — La dualidad de la marca</div>
     <div class="vitruvio-grid">
@@ -634,6 +647,7 @@ footer {
 <!-- HIPÓTESIS / FÓRMULA -->
 <section id="hipotesis">
   <div class="hyp-bg" aria-hidden="true">FÓRMULA</div>
+  <img src="assets/motif_4circles_white.png" aria-hidden="true" style="position:absolute;top:-60px;left:-60px;width:min(30vw,260px);opacity:0.05;pointer-events:none;">
   <div class="section-label dark">03 — La hipótesis</div>
   <div class="section-num">03</div>
   <h2 class="section-heading">LA FÓRMULA<br><em>Modular</em></h2>
@@ -666,6 +680,8 @@ footer {
 
 <!-- TERRITORIO -->
 <section id="territorio">
+  <img src="assets/motif_semicircles_up.png" aria-hidden="true" style="position:absolute;top:0;right:0;width:min(25vw,220px);opacity:0.1;pointer-events:none;">
+  <img src="assets/motif_flor_black.png" aria-hidden="true" style="position:absolute;bottom:-40px;left:-40px;width:min(28vw,240px);opacity:0.08;pointer-events:none;">
   <div class="section-label dark">04 — El primer territorio</div>
   <div class="territory-layout">
     <div>
@@ -753,6 +769,7 @@ footer {
     </div>
   </div>
   <img src="assets/motif_semicircles_right_black.png" class="mayo9-motif" alt="">
+  <img src="assets/motif_4circles_orange.png" aria-hidden="true" style="position:absolute;top:-40px;left:-40px;width:min(22vw,200px);opacity:0.1;pointer-events:none;">
 </section>
 
 <!-- ROADMAP -->
@@ -964,7 +981,8 @@ footer {
         CNC aporta el mensaje: la Filarmónica de Valdivia, la dirección artística, la identidad territorial y la convicción de que la música clásica puede habitar cualquier espacio. El círculo.
       </p>
     </div>
-    <div class="collab-divider">
+    <div class="collab-divider" style="position:relative;overflow:hidden;">
+      <img src="assets/logo_circle_orange.png" aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:120%;opacity:0.08;pointer-events:none;">
       <span class="collab-x">CRTIC × CNC</span>
     </div>
   </div>
@@ -980,6 +998,7 @@ footer {
     <div class="footer-divider"></div>
     <span class="footer-meta">La Cuadratura del Círculo · 2026–2027</span>
   </div>
+  <img src="assets/text_tecnocreativo.png" aria-hidden="true" style="height:20px;opacity:0.2;">
   <a href="mailto:innovacion@crtic.cl" class="footer-contact">innovacion@crtic.cl</a>
 </footer>
 
