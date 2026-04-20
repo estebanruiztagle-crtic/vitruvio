@@ -515,6 +515,60 @@ footer {
 .footer-contact:hover { color: var(--orange); }
 .diamond { font-size: 12px; letter-spacing: 8px; color: rgba(255,255,255,0.08); }
 
+/* ── EXPANSION MANIFEST (ciudades) ── */
+.expansion-manifest { width: 100%; margin-top: 28px; }
+.exp-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+.exp-header-label { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); white-space: nowrap; }
+.exp-header-line { flex: 1; height: 1px; background: rgba(255,255,255,0.15); }
+
+.exp-city {
+  display: grid; grid-template-columns: 28px 1fr auto;
+  gap: 14px; align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+  transition: background 200ms;
+}
+.exp-city-connector {
+  display: flex; flex-direction: column; align-items: center; gap: 0; position: relative; z-index: 2;
+}
+.exp-city-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  background: transparent; flex-shrink: 0;
+}
+.exp-city.active .exp-city-dot { background: var(--orange); border-color: var(--orange); box-shadow: 0 0 8px rgba(254,68,13,0.5); }
+.exp-city.dim .exp-city-dot { border-color: rgba(255,255,255,0.12); }
+
+.exp-city-name {
+  font-family: var(--bebas); font-size: 32px; color: rgba(255,255,255,0.55);
+  letter-spacing: 2px; line-height: 1;
+}
+.exp-city.active .exp-city-name { color: var(--white); }
+.exp-city.dim .exp-city-name { color: rgba(255,255,255,0.3); }
+
+.exp-city-coord { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-top: 3px; }
+.exp-city.active .exp-city-coord { color: rgba(255,255,255,0.55); }
+
+.exp-city-badge {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 100px; text-align: center; white-space: nowrap;
+  color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.12);
+}
+.exp-city.active .exp-city-badge { background: var(--orange); color: white; border-color: var(--orange); }
+
+/* ── CONTRAST FIXES ── */
+.milestone-date { color: rgba(255,255,255,0.65) !important; }
+.phase-pill { color: rgba(255,255,255,0.65) !important; }
+.footer-contact { color: rgba(255,255,255,0.55) !important; }
+.territory-caption { color: rgba(255,255,255,0.55) !important; }
+.ring-city { color: rgba(255,255,255,0.55) !important; }
+.milestone-desc { color: rgba(255,255,255,0.75) !important; }
+.duality-items { color: rgba(255,255,255,0.7) !important; }
+.footer-meta { color: rgba(255,255,255,0.55) !important; }
+.collab-body { color: rgba(255,255,255,0.75) !important; }
+.nav-links a { color: rgba(255,255,255,0.75) !important; }
+
 /* ── BODY TEXT SCALE ×1.5 ── */
 .hero-sub        { font-size: 21px; }
 .concept-body    { font-size: 22px; }
@@ -750,15 +804,46 @@ footer {
       <div class="territory-caption">
         El territorio como mensaje intercambiable
       </div>
-      <div style="margin-top:28px; display:flex; flex-direction:column; gap:8px; width:100%;">
-        <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.3);">
-          <span>Santiago</span><span>→</span><span style="color:var(--orange);">Activo 2026</span>
+      <div class="expansion-manifest">
+        <div class="exp-header">
+          <span class="exp-header-label">Expansión global</span>
+          <div class="exp-header-line"></div>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.15);">
-          <span>Nueva York</span><span>→</span><span>Fase 2</span>
+
+        <div class="exp-city active">
+          <div class="exp-city-connector"><div class="exp-city-dot"></div></div>
+          <div>
+            <div class="exp-city-name">SANTIAGO</div>
+            <div class="exp-city-coord">33°27'S · 70°40'O · CHILE</div>
+          </div>
+          <div class="exp-city-badge">ACTIVO 2026</div>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.15);">
-          <span>Berlín</span><span>→</span><span>Fase 2</span>
+
+        <div class="exp-city">
+          <div class="exp-city-connector"><div class="exp-city-dot"></div></div>
+          <div>
+            <div class="exp-city-name">NUEVA YORK</div>
+            <div class="exp-city-coord">40°42'N · 74°00'O · EEUU</div>
+          </div>
+          <div class="exp-city-badge">FASE 2</div>
+        </div>
+
+        <div class="exp-city">
+          <div class="exp-city-connector"><div class="exp-city-dot"></div></div>
+          <div>
+            <div class="exp-city-name">BERLÍN</div>
+            <div class="exp-city-coord">52°31'N · 13°24'E · ALEMANIA</div>
+          </div>
+          <div class="exp-city-badge">FASE 2</div>
+        </div>
+
+        <div class="exp-city dim">
+          <div class="exp-city-connector"><div class="exp-city-dot"></div></div>
+          <div>
+            <div class="exp-city-name">TOKIO</div>
+            <div class="exp-city-coord">35°41'N · 139°41'E · JAPÓN</div>
+          </div>
+          <div class="exp-city-badge">FASE 3</div>
         </div>
       </div>
     </div>
