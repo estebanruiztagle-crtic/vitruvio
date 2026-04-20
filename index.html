@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRTIC — Vitruvio Design System</title>
+<style>
+  @font-face { font-family: 'Bebas Neue'; src: url('fonts/BebasNeue-Regular.ttf') format('truetype'); }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Regular.ttf') format('truetype'); font-weight: 400; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Bold.ttf') format('truetype'); font-weight: 700; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight: 900; }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --orange: #FE440D;
+    --ink: #1C1F23;
+    --white: #FFFFFF;
+    --gray: #F5F5F5;
+    --mid: #888;
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .logo-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: 0.25rem 0.75rem;
+  }
+
+  .hero {
+    padding: 6rem 3rem 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-motif {
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 420px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .hero-sub {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+
+  h1 span { color: var(--orange); }
+
+  .hero-desc {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 560px;
+    line-height: 1.5;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .card {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card:hover { background: #252930; }
+
+  .card-cat {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .card p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .card-arrow {
+    font-size: 1.5rem;
+    color: var(--orange);
+    margin-top: 0.5rem;
+  }
+
+  .section-label {
+    padding: 1.5rem 3rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-size: 0.875rem;
+    color: var(--mid);
+  }
+
+  footer a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="assets/logo_white.png" alt="CRTIC">
+    <span class="logo-label">Vitruvio</span>
+  </div>
+  <span class="tag">Design System</span>
+</header>
+
+<section class="hero">
+  <img class="hero-motif" src="assets/motif_4circles_white.png" alt="">
+  <p class="hero-sub">Centro para la Revolución Tecnológica en Industrias Creativas</p>
+  <h1>VITRUVIO<br><span>DESIGN</span><br>SYSTEM</h1>
+  <p class="hero-desc">Fundamentos visuales, componentes y guías de voz para la identidad de CRTIC. Autoridad sin solemnidad.</p>
+</section>
+
+<p class="section-label">Prototipo</p>
+<div class="grid">
+  <a class="card" href="ui_kits/website/index.html">
+    <span class="card-cat">UI Kit</span>
+    <h2>Website</h2>
+    <p>Prototipo interactivo con Header, Hero, Secciones y Footer en React.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="La Cuadratura del Circulo.html">
+    <span class="card-cat">Concepto</span>
+    <h2>La Cuadratura del Circulo</h2>
+    <p>Exploración conceptual del proyecto.</p>
+    <span class="card-arrow">→</span>
+  </a>
+</div>
+
+<p class="section-label">Fundamentos visuales</p>
+<div class="grid">
+  <a class="card" href="preview/colors_primary.html">
+    <span class="card-cat">Color</span>
+    <h2>Paleta Primaria</h2>
+    <p>Naranja CRTIC, negro tinta, blanco y variantes de uso.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/colors_neutral.html">
+    <span class="card-cat">Color</span>
+    <h2>Paleta Neutral</h2>
+    <p>Grises, fondos y colores de soporte.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/colors_combos.html">
+    <span class="card-cat">Color</span>
+    <h2>Combinaciones</h2>
+    <p>Contrastes validados y ritmo cromático del sistema.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/type_display.html">
+    <span class="card-cat">Tipografia</span>
+    <h2>Display</h2>
+    <p>Bebas Neue en escala de titulares de impacto máximo.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/type_body.html">
+    <span class="card-cat">Tipografia</span>
+    <h2>Body</h2>
+    <p>Barlow Condensed para textos de cuerpo y UI.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/type_editorial.html">
+    <span class="card-cat">Tipografia</span>
+    <h2>Editorial</h2>
+    <p>Playfair Display para contraste editorial y citas.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/type_scale.html">
+    <span class="card-cat">Tipografia</span>
+    <h2>Escala Tipografica</h2>
+    <p>Sistema completo de tamaños y jerarquia textual.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/spacing_tokens.html">
+    <span class="card-cat">Espaciado</span>
+    <h2>Tokens</h2>
+    <p>Variables de espaciado y ritmo vertical del sistema.</p>
+    <span class="card-arrow">→</span>
+  </a>
+</div>
+
+<p class="section-label">Identidad y voz</p>
+<div class="grid">
+  <a class="card" href="preview/logos.html">
+    <span class="card-cat">Marca</span>
+    <h2>Logos</h2>
+    <p>Variantes del logotipo en naranja, blanco y negro.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/motifs.html">
+    <span class="card-cat">Marca</span>
+    <h2>Motivos</h2>
+    <p>Geometria como lenguaje: semicirculos, circulos y flor.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/voice_rules.html">
+    <span class="card-cat">Voz</span>
+    <h2>Reglas de Voz</h2>
+    <p>Tono institucional de vanguardia. Autoridad sin solemnidad.</p>
+    <span class="card-arrow">→</span>
+  </a>
+</div>
+
+<p class="section-label">Componentes</p>
+<div class="grid">
+  <a class="card" href="preview/components_buttons.html">
+    <span class="card-cat">Componentes</span>
+    <h2>Botones</h2>
+    <p>Estados, variantes y jerarquia de llamadas a la accion.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/components_tags.html">
+    <span class="card-cat">Componentes</span>
+    <h2>Tags</h2>
+    <p>Etiquetas de categoria y clasificacion de contenido.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a class="card" href="preview/components_cards.html">
+    <span class="card-cat">Componentes</span>
+    <h2>Cards</h2>
+    <p>Tarjetas de contenido para proyectos, noticias y eventos.</p>
+    <span class="card-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <p>CRTIC — Centro para la Revolucion Tecnologica en Industrias Creativas</p>
+  <p><a href="https://github.com/estebanruiztagle-crtic/vitruvio">GitHub</a></p>
+</footer>
+
+</body>
+</html>
